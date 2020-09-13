@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .embox{
+            color: #333;
+            font-size: 1em;
+        }
+        .emspan{
+            color: aqua;
+            font-size: 0.5em;
+        }
+        .ema{
+            color: burlywood;
+            font-size: 0.5em;
+        }
+        .rembox{
+            width: 5rem;
+            height: 2rem;
+            background: pink;
+            color: #333;
+            font-size: 0.5rem;
+        }
+        .remspan{
+            color: aqua;
+            font-size: 0.5rem;
+        }
+        .rema{
+            color: burlywood;
+            font-size: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function setFont(){
+            let docW = document.documentElement.clientWidth;
+            document.documentElement.style.fontSize = docW/640*64 + 'px';
+        }
+        setFont()
+        window.onresize = function(){
+            setFont()
+        }
+    </script>
+    <!-- rem em 
+        em 基于父元素
+        rem 基于根节点 1rem 就是html根字体的大小
+            如果
+            html font-size 16px;
+            1rem = 16px;
+            如果
+            html font-size 32px;
+            1rem = 32px;
+    -->
+    <!-- 
+        vw：视窗宽度的百分比（1vw 代表视窗的宽度为 1%）
+        vh：视窗高度的百分比
+        vmin：当前 vw 和 vh 中较小的一个值
+        vmax：当前 vw 和 vh 中较大的一个值
+     -->
+     <!-- 
+         框架 ： flexable.js
+                hotcss.js
+      -->
+    <p>em</p>
+    <div class="embox">
+        这是 em div 标签
+        <span class="emspan">
+            这是 em span 标签
+            <a href="" class="ema">
+                这是 em a 标签
+            </a>
+        </span>
+    </div>
+    <p>rem</p>
+    <div class="rembox">
+        这是 rem div 标签
+        <span class="remspan">
+            这是 rem span 标签
+            <a href="" class="rema">
+                这是 rem a 标签
+            </a>
+        </span>
+    </div>
+</body>
+</html>
